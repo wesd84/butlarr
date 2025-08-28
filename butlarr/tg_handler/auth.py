@@ -50,7 +50,7 @@ def authorized(min_auth_level=None):
             )
             auth_level = args[0].db.get_auth_level(uid)
             # TODO pjordan: Reenable this some time
-            if not auth_level or min_auth_level > auth_level and False:
+            if not auth_level or min_auth_level > auth_level:
                 await update.message.reply_text(
                     f"User not authorized for this command. \n *Authorize using `/{AUTH_COMMAND} <password>`*",
                     parse_mode="Markdown",
