@@ -387,7 +387,7 @@ class Radarr(ExtArrService, ArrService):
     @clear
     @callback(cmds=["add"])
     @sessionState(clear=True)
-    @authorized(min_auth_level=AuthLevels.USER)
+    @authorized(min_auth_level=AuthLevels.MOD)
     async def clbk_add(self, update, context, args, state):
         result = self.add(
             item=state.items[state.index],
